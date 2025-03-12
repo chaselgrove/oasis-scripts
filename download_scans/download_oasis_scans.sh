@@ -43,7 +43,7 @@ unset module
 startSession() {
     # Authentication to XNAT and store cookies in cookie jar file
     local COOKIE_JAR=.cookies-$(date +%Y%M%d%s).txt
-    if ! curl -f -k -s -u ${USERNAME}:${PASSWORD} --cookie-jar ${COOKIE_JAR} "https://www.nitrc.org/ir/data/JSESSION" > /dev/null; then
+    if ! curl -f -k -s -u "${USERNAME}:${PASSWORD}" --cookie-jar ${COOKIE_JAR} "https://www.nitrc.org/ir/data/JSESSION" > /dev/null; then
         return 1
     fi
     echo ${COOKIE_JAR}
